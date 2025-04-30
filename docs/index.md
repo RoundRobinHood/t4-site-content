@@ -24,3 +24,41 @@ The Flying Dutchman can be used to monitor a wide range of water sources, due to
 6. **Turbidity Sensor**: measures the clarity of the water. 
 
 ![Labeled photo](./assets/annotated.png)
+
+# The interactive game
+
+There is also a shipped, interactive game available [here](../t4/). The player can learn programming from a high-level perspective by writing code in a graph structure. It is currently still in development, but is highly extensible, and players write code that responds to various temperature readings to keep their farm unit alive.
+
+## Level selection screen
+
+![Level selection](./assets/level_selection.png)
+
+The level selection screen allows players to pick levels to play. A level is only playable if all levels before it have been completed.
+
+## The programming screen
+
+![Programming screen](./assets/programming.png)
+
+The programming screen is where the player can choose to place nodes
+The solution displayed in the graph is the intended solution for level 1.
+
+## The game screen
+
+![Game screen](./assets/simulation.png)
+
+The game screen is where the player's code gets executed in real time. The player wins when they achieve the target score (visible at the top right), and loses if:
+
+- Their coins go below zero
+- The farm dies due to overheating or freezing.
+
+On the game view itself (in the middle), you can see:
+
+- Farm unit (green block):
+    - Represents a collection of plants housed in a grid square. Dies if temperature goes outside of safe boundaries.
+    - You lose if you run out of farm units.
+- Controller (above the farm unit):
+    - Uses coins and score when it runs
+    - While it runs, it ensures temperatures stay within safe ranges for up to 1 square away.
+- Sensor (to the right of the farm unit):
+    - Reports maximum sensor reading in the graph, in around a ~1.5 grid square radius.
+    - Displays a temperature map on the game screen, ranging from blue (way too cold) -> green (good) -> red (way too hot).
