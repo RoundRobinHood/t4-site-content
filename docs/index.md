@@ -42,6 +42,14 @@ The level selection screen allows players to pick levels to play. A level is onl
 The programming screen is where the player can choose to place nodes
 The solution displayed in the graph is the intended solution for level 1.
 
+The following nodes can be used:
+
+1. Sensor node: Can be configured to select a specific sensor (currently only 1 possibility). When code is executed, this node spits out the most deviating temperature reading in its radius. 
+2. Number node: This node continuously spits out the number it is provided with. 
+3. IfGreater node: It spits out a 1 if a > b, and 0 otherwise. 
+4. Additive node: It spits out a + b. 
+5. Controller node: If its input is >= 1, it activates. Otherwise, it deactivates. If a controller is active, it ensures that a farm next to it always has safe temperature readings. However, it subtracts from score and coins when running and can cause game over if the coins go below 0. 
+
 ## The game screen
 
 ![Game screen](./assets/simulation.png)
